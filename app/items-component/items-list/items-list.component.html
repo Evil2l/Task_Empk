@@ -1,0 +1,42 @@
+<div>
+    <h2>{{title}}</h2>
+
+    <form
+            class="form-inline"
+            (ngSubmit)="onSubmit(form)"
+            #form="ngForm"
+            novalidate
+    >
+        <div class="form-group">
+            <label for="inputItem" class="sr-only">Item</label>
+            <input type="text"
+                   class="form-control"
+                   id="inputItem"
+                   placeholder="Type name here..."
+                   ngModel
+                   name="title"
+                   required
+            >
+        </div>
+        <button
+                [disabled]="!form.form.valid"
+                type="submit"
+                class="btn btn-primary form-btn"
+
+        >Add new</button>
+    </form>
+
+    <ul *ngIf="items">
+        <li
+                *ngFor="let item of items"
+                (click)="onSelected(item)"
+        >
+            <a>{{item?.title}}</a>
+            <small>{{item?.comments.length? item.comments.length : 0}}</small>
+            <button
+                    class="btn btn-outline-danger"
+                    (click)="removeItem(item)"
+            >Delete</button>
+        </li>
+    </ul>
+</div>

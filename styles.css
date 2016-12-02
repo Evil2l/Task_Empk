@@ -1,0 +1,27 @@
+.form-btn, small{
+  background-color: #34C6BB;
+}
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+sidebar-app{
+  height: 100vh;
+  background-color: grey;
+}
+items-app{
+  height: 100vh;
+  background-color: #f9f9f9;
+
+}
+items-list-app{
+  border: 1px solid black;
+  background: #fff;
+  border-radius: 5px;
+}
+item-comments{
+  border: 1px solid black;
+  background: #fff;
+  border-radius: 5px;
+}

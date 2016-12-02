@@ -1,0 +1,39 @@
+<div>
+    <h2>Comments #{{selectedItem?.id}}</h2>
+    <ul *ngIf="selectedItem?.comments">
+        <li *ngFor="let comment of selectedItem.comments">
+            <div class="avatar"></div>
+            <div class="text">{{comment?.text}}</div>
+            <hr>
+        </li>
+    </ul>
+
+    <form
+            class="form-inline"
+            (ngSubmit)="onSubmit(form)"
+            #form="ngForm"
+            novalidate
+    >
+        <button
+                [disabled]="!form.form.valid"
+                type="submit"
+                class="btn btn-primary form-btn"
+
+        ></button>
+        <div class="form-group">
+            <label for="inputComment"
+                   class="sr-only"
+            >Item</label>
+            <textarea
+                   class="form-control"
+                   id="inputComment"
+                   ngModel
+                   name="text"
+                   required
+            ></textarea>
+        </div>
+
+    </form>
+
+
+</div>
