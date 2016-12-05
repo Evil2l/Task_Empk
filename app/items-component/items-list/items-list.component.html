@@ -30,11 +30,11 @@
     >
         <li  class="item-element"
              *ngFor="let item of items; let i=index"
-             (click)="onSelected(item)"
              tabindex
         >
             <div class="element-wrap">
-                <a>{{item?.title.length<30 ? item?.title : (item.title.slice(0, 27)+"...")}}</a>
+                <a              (click)="onSelected(item)"
+                >{{item?.title.length<30 ? item?.title : (item.title.slice(0, 27)+"...")}}</a>
                 <small>{{item?.comments.length? item.comments.length : 0}}</small>
                 <button
                         class="btn btn-outline-danger"

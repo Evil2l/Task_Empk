@@ -98,7 +98,7 @@ hr{
   min-width: 300px;
 }
 
-.content-box.items-list-app .items-list .item-element:before{
+.content-box.items-list-app .items-list .item-element a:before{
   content: '';
   display: none;
   position: absolute;
@@ -118,7 +118,7 @@ hr{
   /*display: block;*/
 /*}*/
 
-.content-box.items-list-app .items-list .item-element:active::before{
+.content-box.items-list-app .items-list .item-element a.active::before{
   display: block;
 }
 

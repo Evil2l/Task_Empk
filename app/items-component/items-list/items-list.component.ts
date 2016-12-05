@@ -44,7 +44,13 @@ export class ItemsListComponent implements OnInit {
     }
 
     listCheck(any: any){
-        console.log(any.target.parentNode());
+        let selector = '.element-wrap a';
+        let elems = document.querySelectorAll(selector);
+        for (let i = 0; i < elems.length; i++){
+            elems[i].classList.remove('active');
+        }
+        any.target.classList.add('active');
+
     }
 
 }
