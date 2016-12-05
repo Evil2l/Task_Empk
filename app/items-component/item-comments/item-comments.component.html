@@ -1,31 +1,43 @@
-<div>
-    <h2>Comments #{{selectedItem?.id}}</h2>
-    <ul *ngIf="selectedItem?.comments">
-        <li *ngFor="let comment of selectedItem.comments">
-            <div class="avatar"></div>
-            <div class="text">{{comment?.text}}</div>
+
+    <h2 class="title">Comments #{{selectedItem?.number}}</h2>
+    <ul class="comments-list" *ngIf="selectedItem?.comments">
+        <li class="comment-element" *ngFor="let comment of selectedItem.comments; let i = index">
+            <div class="avatar-wrap">
+                <div
+                        class="comment-avatar"
+                        [style.backgroundColor]="colorSet(i)"
+                >
+                </div>
+            </div>
+
+            <div class="comment-text-wrap">
+                <span class="comment-text" >{{comment?.text}}</span>
+            </div>
             <hr>
         </li>
     </ul>
 
     <form
-            class="form-inline"
+            class="comment-form"
             (ngSubmit)="onSubmit(form)"
             #form="ngForm"
             novalidate
     >
-        <button
-                [disabled]="!form.form.valid"
-                type="submit"
-                class="btn btn-primary form-btn"
+        <div class="avatar-wrap">
+            <button
+                    [disabled]="!form.form.valid"
+                    type="submit"
+                    class="comment-avatar comment-btn"
 
-        ></button>
-        <div class="form-group">
+            ></button>
+        </div>
+
+        <div class="comment-text-input" >
             <label for="inputComment"
                    class="sr-only"
-            >Item</label>
+            >Comment</label>
             <textarea
-                   class="form-control"
+
                    id="inputComment"
                    ngModel
                    name="text"
@@ -36,4 +48,3 @@
     </form>
 
 
-</div>

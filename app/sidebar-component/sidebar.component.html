@@ -1,6 +1,6 @@
-<h1>hello sidebar</h1>
+<h1 class="title">Main</h1>
 <ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link active" (click)="showItems()">Overview</a>
+    <li [style.background-color]="getStyle()" class="nav-item list-element" >
+        <a class="nav-link list-element-link active" (click)="showItems()">Overview</a>
     </li>
 </ul>

@@ -1,4 +1,3 @@
-<div class="row">
-    <items-list-app (itemSelected)="selectedItem = $event" class="col-md-6"></items-list-app>
-    <item-comments *ngIf="selectedItem" [selectedItem]="selectedItem" class="col-md-6"></item-comments>
-</div>
+
+    <items-list-app (itemSelected)="selectedItem = $event" class="content-box items-list-app"></items-list-app>
+    <item-comments *ngIf="selectedItem" [selectedItem]="selectedItem" class="content-box item-comments"></item-comments>

@@ -6,7 +6,8 @@ import {ItemService} from "../../item.service";
 @Component({
     moduleId: module.id,
     selector: 'items-list-app',
-    templateUrl: 'items-list.component.html'
+    templateUrl: 'items-list.component.html',
+    styleUrls: ['items-list.component.css']
 })
 export class ItemsListComponent implements OnInit {
 
@@ -16,7 +17,8 @@ export class ItemsListComponent implements OnInit {
 
     @Output() itemSelected = new EventEmitter<Item>();
 
-    constructor(private itemService: ItemService) { }
+    constructor(private itemService: ItemService
+    ) { }
 
     ngOnInit() {
         this.items = this.itemService.getItems();
@@ -26,7 +28,7 @@ export class ItemsListComponent implements OnInit {
         const item = new Item(
             form.value.title,
             new Date(),
-            (this.items.length).toString(),
+            ((this.items.length)+1).toString(),
             []
         );
         this.itemService.addItem(item);
@@ -39,6 +41,10 @@ export class ItemsListComponent implements OnInit {
 
     removeItem(item: Item){
         this.itemService.deleteItem(item);
+    }
+
+    listCheck(any: any){
+        console.log(any.target.parentNode());
     }
 
 }

@@ -5,7 +5,8 @@ import {Item} from "../models/item.model";
 @Component({
     moduleId: module.id,
     selector: 'items-app',
-    templateUrl: 'items.component.html'
+    templateUrl: 'items.component.html',
+    styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
 
@@ -13,7 +14,10 @@ export class ItemsComponent implements OnInit {
 
     selectedItem: Item;
 
-    constructor(private itemService: ItemService) { }
+    constructor(
+        private itemService: ItemService
+
+    ) { }
 
     ngOnInit() {
         // this.items = this.itemService.getItems();

@@ -1,16 +1,13 @@
-<div>
-    <h2>{{title}}</h2>
+
+    <h2 class="title">{{title}}</h2>
 
     <form
-            class="form-inline"
             (ngSubmit)="onSubmit(form)"
             #form="ngForm"
             novalidate
     >
-        <div class="form-group">
-            <label for="inputItem" class="sr-only">Item</label>
+        <div class="item-input-wrap">
             <input type="text"
-                   class="form-control"
                    id="inputItem"
                    placeholder="Type name here..."
                    ngModel
@@ -21,22 +18,30 @@
         <button
                 [disabled]="!form.form.valid"
                 type="submit"
-                class="btn btn-primary form-btn"
+                class="btn form-btn"
 
         >Add new</button>
     </form>
 
-    <ul *ngIf="items">
-        <li
-                *ngFor="let item of items"
-                (click)="onSelected(item)"
+    <ul
+            (click)="listCheck($event)"
+            class="items-list"
+            *ngIf="items"
+    >
+        <li  class="item-element"
+             *ngFor="let item of items; let i=index"
+             (click)="onSelected(item)"
+             tabindex
         >
-            <a>{{item?.title}}</a>
-            <small>{{item?.comments.length? item.comments.length : 0}}</small>
-            <button
-                    class="btn btn-outline-danger"
-                    (click)="removeItem(item)"
-            >Delete</button>
+            <div class="element-wrap">
+                <a>{{item?.title.length<30 ? item?.title : (item.title.slice(0, 27)+"...")}}</a>
+                <small>{{item?.comments.length? item.comments.length : 0}}</small>
+                <button
+                        class="btn btn-outline-danger"
+                        (click)="removeItem(item)"
+                >Delete</button>
+            </div>
+
+            <hr>
         </li>
     </ul>
-</div>

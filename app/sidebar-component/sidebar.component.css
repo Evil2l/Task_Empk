@@ -1,0 +1,24 @@
+.title
+{
+    font-family : 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size : 36px;
+    color : rgb(86, 90, 105);
+    padding-left: 30px;
+    margin-bottom: 75px;
+}
+
+.list-element{
+    height:60px;
+    padding-left: 30px;
+}
+
+.nav-link.list-element-link.active
+{
+    font-family : 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size : 18px;
+    color : rgb(255, 255, 255);
+    line-height:60px;
+    width: 100%;
+}

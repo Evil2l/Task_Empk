@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from "@angular/forms";
+import { RouterModule} from '@angular/router';
 
 import { AppComponent }  from './app.component';
 import {SidebarComponent} from "./sidebar-component/sidebar.component";
@@ -13,7 +14,8 @@ import {ItemService} from "./item.service";
 @NgModule({
   imports:      [
       BrowserModule,
-      FormsModule
+      FormsModule,
+      RouterModule
   ],
   declarations: [
       AppComponent,

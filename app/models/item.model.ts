@@ -4,7 +4,7 @@ export class Item{
     constructor(
         public title: string,
         public date: any,
-        public id?: string,
+        public number?: string,
         public comments?: Comment[]
     ){}
 }

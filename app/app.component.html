@@ -1,9 +1,15 @@
-    <sidebar-app (itemsShow)="showItems()" class="col-sm-3 sidebar">
+
+<div class="main-wrap">
+    <sidebar-app (itemsShow)="showItems()" class="sidebar">
         One of three columns
+
     </sidebar-app>
 
-    <items-app *ngIf="isItems" class="col-sm-9">
+
+    <items-app *ngIf="isItems">
         One of three columns
     </items-app>
+</div>
+
 
 
